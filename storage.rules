@@ -1,0 +1,36 @@
+rules_version = '2';
+
+service firebase.storage {
+  match /b/{bucket}/o {
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+
+    function isOwner(userId) {
+      return isAuthenticated() && request.auth.uid == userId;
+    }
+
+    function isImage() {
+      return request.resource.contentType.matches('image/.*');
+    }
+
+    function isUnderMaxSize() {
+      // 15MB limit per uploaded attachment
+      return request.resource.size < 15 * 1024 * 1024;
+    }
+
+    // User note attachments: users/{userId}/notes/{noteId}/{filename}
+    match /users/{userId}/notes/{noteId}/{fileName} {
+      allow read: if isOwner(userId);
+      allow create, update: if isOwner(userId) && isImage() && isUnderMaxSize();
+      allow delete: if isOwner(userId);
+    }
+
+    // General user files scope fallback
+    match /users/{userId}/{allPaths=**} {
+      allow read: if isOwner(userId);
+      allow create, update: if isOwner(userId) && isImage() && isUnderMaxSize();
+      allow delete: if isOwner(userId);
+    }
+  }
+}

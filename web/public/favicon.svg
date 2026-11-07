@@ -1,0 +1,102 @@
+<svg width="48" height="48" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="512" height="512" rx="128" fill="#0b0f19"/>
+  <rect x="20" y="20" width="472" height="472" rx="112" fill="url(#bgGrad)"/>
+  
+  <defs>
+    <linearGradient id="bgGrad" x1="40" y1="40" x2="472" y2="472" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#f59e0b"/>
+      <stop offset="0.45" stop-color="#ea580c"/>
+      <stop offset="0.8" stop-color="#4f46e5"/>
+      <stop offset="1" stop-color="#312e81"/>
+    </linearGradient>
+    <linearGradient id="furHead" x1="256" y1="120" x2="256" y2="440" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#fffbeb"/>
+      <stop offset="0.3" stop-color="#fef3c7"/>
+      <stop offset="0.7" stop-color="#fde68a"/>
+      <stop offset="1" stop-color="#f59e0b"/>
+    </linearGradient>
+    <linearGradient id="furEarL" x1="100" y1="140" x2="180" y2="340" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#ea580c"/>
+      <stop offset="0.6" stop-color="#c2410c"/>
+      <stop offset="1" stop-color="#9a3412"/>
+    </linearGradient>
+    <linearGradient id="furEarR" x1="412" y1="140" x2="332" y2="340" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#ea580c"/>
+      <stop offset="0.6" stop-color="#c2410c"/>
+      <stop offset="1" stop-color="#9a3412"/>
+    </linearGradient>
+    <linearGradient id="collarGrad" x1="150" y1="390" x2="362" y2="430" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#3730a3"/>
+      <stop offset="0.5" stop-color="#4f46e5"/>
+      <stop offset="1" stop-color="#312e81"/>
+    </linearGradient>
+    <linearGradient id="goldMedal" x1="240" y1="410" x2="272" y2="455" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#fef08a"/>
+      <stop offset="0.4" stop-color="#facc15"/>
+      <stop offset="1" stop-color="#ca8a04"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Shoulders / Chest Base -->
+  <path d="M 125 470 C 140 435, 160 410, 180 395 L 332 395 C 352 410, 372 435, 387 470 Z" fill="url(#furHead)"/>
+  <path d="M 220 405 C 240 405, 272 405, 292 405 C 305 435, 315 455, 320 470 L 192 470 C 197 455, 207 435, 220 405 Z" fill="#ffffff" opacity="0.85"/>
+
+  <!-- Left Ear -->
+  <path d="M 180 145 C 115 145, 85 200, 100 275 C 110 325, 138 365, 175 355 C 195 350, 198 315, 190 270 C 185 240, 185 180, 180 145 Z" fill="url(#furEarL)"/>
+  <path d="M 170 165 C 128 175, 112 220, 118 280 C 125 320, 142 345, 168 340 C 178 335, 180 310, 175 270 C 172 240, 172 195, 170 165 Z" fill="#7c2d12" opacity="0.45"/>
+
+  <!-- Right Ear -->
+  <path d="M 332 145 C 397 145, 427 200, 412 275 C 402 325, 374 365, 337 355 C 317 350, 314 315, 322 270 C 327 240, 327 180, 332 145 Z" fill="url(#furEarR)"/>
+  <path d="M 342 165 C 384 175, 400 220, 394 280 C 387 320, 370 345, 344 340 C 334 335, 332 310, 337 270 C 340 240, 340 195, 342 165 Z" fill="#7c2d12" opacity="0.45"/>
+
+  <!-- Head Base Shape -->
+  <path d="M 180 145 C 215 125, 297 125, 332 145 C 365 170, 375 225, 372 285 C 370 335, 355 375, 340 405 L 172 405 C 157 375, 142 335, 140 285 C 137 225, 147 170, 180 145 Z" fill="url(#furHead)"/>
+
+  <!-- White Forehead Blaze & Snout -->
+  <path d="M 248 135 C 252 135, 260 135, 264 135 C 268 180, 275 210, 290 235 C 325 240, 345 265, 345 305 C 345 345, 315 375, 256 375 C 197 375, 167 345, 167 305 C 167 265, 187 240, 222 235 C 237 210, 244 180, 248 135 Z" fill="#ffffff" opacity="0.95"/>
+
+  <!-- Eyes -->
+  <ellipse cx="205" cy="225" rx="14" ry="16" fill="#0f172a"/>
+  <circle cx="207" cy="226" r="11" fill="#78350f"/>
+  <circle cx="207" cy="226" r="7.5" fill="#0f172a"/>
+  <circle cx="211" cy="220" r="3.8" fill="#ffffff"/>
+
+  <ellipse cx="307" cy="225" rx="14" ry="16" fill="#0f172a"/>
+  <circle cx="305" cy="226" r="11" fill="#78350f"/>
+  <circle cx="305" cy="226" r="7.5" fill="#0f172a"/>
+  <circle cx="309" cy="220" r="3.8" fill="#ffffff"/>
+
+  <!-- Eyebrows -->
+  <ellipse cx="202" cy="195" rx="8" ry="5" fill="#ea580c"/>
+  <ellipse cx="310" cy="195" rx="8" ry="5" fill="#ea580c"/>
+
+  <!-- Dog Nose -->
+  <path d="M 230 270 C 240 262, 272 262, 282 270 C 292 278, 290 295, 278 305 C 268 313, 244 313, 234 305 C 222 295, 220 278, 230 270 Z" fill="#0f172a"/>
+  <ellipse cx="243" cy="290" rx="3.5" ry="2.5" fill="#1e293b"/>
+  <ellipse cx="269" cy="290" rx="3.5" ry="2.5" fill="#1e293b"/>
+  <ellipse cx="256" cy="275" rx="12" ry="4" fill="#ffffff" opacity="0.35"/>
+
+  <!-- Smile & Tongue -->
+  <path d="M 256 308 L 256 325" stroke="#78350f" stroke-width="4" stroke-linecap="round"/>
+  <path d="M 225 325 C 235 342, 250 342, 256 325 C 262 342, 277 342, 287 325" stroke="#78350f" stroke-width="4" stroke-linecap="round" fill="none"/>
+  <path d="M 246 333 C 246 352, 266 352, 266 333 Z" fill="#f43f5e"/>
+
+  <!-- Whisker Dots -->
+  <circle cx="215" cy="305" r="2" fill="#b45309" opacity="0.6"/>
+  <circle cx="205" cy="312" r="2" fill="#b45309" opacity="0.6"/>
+  <circle cx="297" cy="305" r="2" fill="#b45309" opacity="0.6"/>
+  <circle cx="307" cy="312" r="2" fill="#b45309" opacity="0.6"/>
+
+  <!-- Dog Collar -->
+  <path d="M 160 395 C 210 410, 302 410, 352 395 L 356 422 C 302 438, 210 438, 156 422 Z" fill="url(#collarGrad)"/>
+  <path d="M 160 395 C 210 410, 302 410, 352 395" stroke="#fbbf24" stroke-width="2.5" fill="none"/>
+
+  <!-- Gold Medallion with Argos Paw -->
+  <circle cx="256" cy="418" r="6" stroke="#fbbf24" stroke-width="3" fill="none"/>
+  <circle cx="256" cy="440" r="18" fill="url(#goldMedal)"/>
+  <circle cx="256" cy="440" r="15" stroke="#fffbeb" stroke-width="1.5" fill="none" opacity="0.7"/>
+  <ellipse cx="256" cy="442" rx="5" ry="4" fill="#78350f"/>
+  <circle cx="249" cy="435" r="2.2" fill="#78350f"/>
+  <circle cx="256" cy="433" r="2.2" fill="#78350f"/>
+  <circle cx="263" cy="435" r="2.2" fill="#78350f"/>
+</svg>
