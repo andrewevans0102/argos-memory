@@ -3,6 +3,8 @@
 > *"Argos, Odysseus’s faithful hound, who recognized his master after twenty years of war and wandering."*  
 > A lightweight, intelligent personal memory log, multimodal note taking engine, and automated daily AI briefings.
 
+![Argos Memory workflow across Capture, Actions, Ask Argos Search, and Daily Digests](docs/images/argos-memory-workflow-screenshots.jpg)
+
 ---
 
 ## 1. System Vision & Architecture
