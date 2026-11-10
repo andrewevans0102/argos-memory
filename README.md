@@ -145,12 +145,20 @@ cp web/.env.example web/.env
 cp functions/.env.example functions/.env
 ```
 
-For emulator-based development, set `VITE_USE_FIREBASE_EMULATORS=true` in `web/.env`. Optional local API secrets are saved by the Firebase CLI in an ignored file, not in the source tree:
+For emulator-based development, set `VITE_USE_FIREBASE_EMULATORS=true` and `VITE_FIREBASE_PROJECT_ID=demo-argos-memory` in `web/.env`. Optional local API secrets are saved in `functions/.secret.local` (ignored by git):
 
 ```bash
-firebase functions:secrets:set GEMINI_API_KEY --local --project demo-argos-memory
-firebase functions:secrets:set RESEND_API_KEY --local --project demo-argos-memory
+cat <<EOF > functions/.secret.local
+GEMINI_API_KEY=your_gemini_api_key
+RESEND_API_KEY=your_resend_api_key
+EOF
 ```
+
+> **Note for Firebase Emulator Compatibility:**
+> When running locally with the Firebase Emulator Suite, you may need to make the following adjustments:
+> 1. **`FieldValue` import in Cloud Functions:** The Firebase Functions emulator runtime proxies `admin.firestore` using `.bind()`, which strips static properties like `admin.firestore.FieldValue`. In `functions/src/ingestNote.ts` and `functions/src/dailyDigest.ts`, import `FieldValue` directly from `"firebase-admin/firestore"` (`import { FieldValue } from "firebase-admin/firestore";`) and replace `admin.firestore.FieldValue.serverTimestamp()` with `FieldValue.serverTimestamp()`, then rebuild (`cd functions && npm run build`).
+> 2. **Matching Project ID in `web/.env`:** Ensure `VITE_FIREBASE_PROJECT_ID=demo-argos-memory` and `VITE_USE_FIREBASE_EMULATORS=true` are set in `web/.env` so the frontend connects to the same project namespace as `firebase emulators:start --project demo-argos-memory`.
+> 3. **macOS Port 5000 Conflict (Optional):** If macOS AirPlay Receiver (`ControlCenter`) is using port `5000` and blocks the Hosting emulator while you are testing via Vite (`npm run dev`), start only the backend emulators with `firebase emulators:start --project demo-argos-memory --only auth,functions,firestore,storage`.
 
 Build the Functions TypeScript before starting the emulators:
 
